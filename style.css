@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.zoom-in, .zoom-out {
+    width: 3vw;
+    aspect-ratio: 1/1;
+    border: none;
+    background-color: rgb(190, 190, 190);
+    display: block;
+    border-radius: 0.3vw;
+    font-size: 1vw;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+.zoom-out { margin-top: 5px;}
+.zoomers {
+    width: fit-content;
+    height: fit-content;
+    position: fixed;
+    right: 1vw;
+    top: 50%;
+    translate: 0 -50%;
+    z-index: 999;
+}
+
+#boxShell {
+    width: fit-content;
+    height: fit-content;
+    border: 2px solid gray;
+    white-space: nowrap; /* prevent boxes from wrapping to next line */
+}
+
+:root {
+    --boxSize: 10px;
+}
+
+.box {
+    width: var(--boxSize);
+    height: var(--boxSize);
+    display: inline-block;
+    cursor: pointer;
+}
+
+.box:hover {
+    width: calc(var(--boxSize));
+    height: calc(var(--boxSize));
+    filter: brightness(0.9);
+}
+body {
+    line-height: 0;
+    width: fit-content;
+    overflow: scroll;
+}
+
+.colors {
+    width: fit-content;
+    height: fit-content;
+    position: fixed;
+    left: 50%;
+    bottom: 1vw;
+    translate: -50% 0;
+    z-index: 999;
+}

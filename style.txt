@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#boxShell {
+    width: fit-content;
+    height: fit-content;
+    border: 5px solid gray;
+}
+
+:root {
+    --boxSize: 1vw;
+}
+
+.box {
+    width: calc(var(--boxSize) - 3px);
+    height: calc(var(--boxSize) - 3px);
+    display: inline-block;
+    cursor: pointer;
+}
+
+.box:hover {
+    width: calc(var(--boxSize) - 5px);
+    height: calc(var(--boxSize) - 5px);
+    filter: brightness(0.9);
+    border: 1px solid rgb(153, 255, 113);
+}
+body {
+    line-height: 0;
+}

@@ -24,7 +24,6 @@
     translate: 0 -50%;
     z-index: 999;
 }
-
 #boxShell {
     width: fit-content;
     height: fit-content;
@@ -62,4 +61,18 @@ body {
     bottom: 1vw;
     translate: -50% 0;
     z-index: 999;
+}
+
+@media screen and (orientation: portrait) {
+    .zoomers {
+        display: none;
+    }
+    .colors {
+        bottom: 1vh;
+        position: relative;
+        bottom: 0;
+    }
+    :root {
+        --boxSize: 5px;
+    }
 }

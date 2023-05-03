@@ -47,7 +47,7 @@ function shrinkBlock() {
 
 function forLoopToCreateBoxes(parentElement, startingNum) {
     var oneInOneHoundred = 0
-    for (let i = startingNum; i < startingNum+10000; i++) {
+    for (let i = startingNum; i < startingNum+10000; i++) { //change to +20000 when going landscape
         db.ref(parentElement.toString() + "/box" + i.toString()).once("value").then(function(snapshot) {
             var newBox = document.createElement("div");
             newBox.onclick = function() {
@@ -90,7 +90,7 @@ function forLoopToCreateBoxes(parentElement, startingNum) {
             newBox.classList.add("box");
             boxShell.appendChild(newBox);
             oneInOneHoundred++
-            if (oneInOneHoundred === 100) {
+            if (oneInOneHoundred === 100) { //change to 200 when going landscape
                 boxShell.appendChild(document.createElement("br"))
                 console.log(oneInOneHoundred)
                 oneInOneHoundred = 0
@@ -104,8 +104,8 @@ function forLoopToCreateBoxes(parentElement, startingNum) {
         document.getElementById(boxNumber).style.backgroundColor = boxValue
     });
 }
-function forLoopCreateSets(setName, length) {
-    for (var i = 0; i < length; i++) {
+function forLoopCreateSets(setName, length, startingNumber) {
+    for (var i = startingNumber; i < startingNumber + length; i++) {
         db.ref(setName.toString() + "/box" + i.toString()).set("#FFFFFF")
         console.log(i)
     }
@@ -117,6 +117,6 @@ function loadBox() {
 loadBox()
 
 function createEmptyBox() {
-    forLoopCreateSets("boxOuter1", 10000)
+    forLoopCreateSets("boxOuter3", 20000, 0)
 }
 //createEmptyBox()
